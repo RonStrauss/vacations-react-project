@@ -34,7 +34,7 @@ const FlightPage = ({ flightsArr, setFlightsArr, user, setUser, setSnackState, s
 	const [ currentFlightDeleted, setCurrentFlightDeleted ] = useState(null);
 
 	const handleFlightsFetch = async () => {
-		const res = await fetch("http://localhost:1000/flight/all", {
+		const res = await fetch("/flight/all", {
 			credentials: "include"
 		});
 		const data = await res.json();
