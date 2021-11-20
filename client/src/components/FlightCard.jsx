@@ -5,7 +5,7 @@ import { Favorite as FavoriteIcon, HighlightOff as HighlightOffIcon, ModeEdit as
 export default function FlightCard({ flight, setFlightsArr, setUser, user, isModalOpen, setIsEditDialogOpen, setCurrentlyEdittedFlight, setIsDeleteDialogOpen }) {
 
 	const handleFollow = async flightID => {
-		const res = await fetch('http://localhost:1000/flight/follow/' + flightID, {
+		const res = await fetch('/flight/follow/' + flightID, {
 			method: 'put',
 			credentials: 'include',
 		})

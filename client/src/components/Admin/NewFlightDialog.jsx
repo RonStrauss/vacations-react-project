@@ -44,7 +44,7 @@ export default function FormDialog({ isAddDiaglogOpen, setIsAddDiaglogOpen, setF
             setCollapseState({severity:'error', title:'Error...', body:'Your dates are invalid, please try re-selecting'})
         } else {
             const { destination, description, img, flight_starts, flight_ends, price } = newFlightInput
-			const res = await fetch('http://localhost:1000/admin/newFlight', {
+			const res = await fetch('/admin/newFlight', {
                 method: 'post',
 				headers: { 'content-type': 'application/json' },
 				body: JSON.stringify({ destination, description, img, flight_starts, flight_ends, price }),

@@ -15,7 +15,7 @@ const Register = () => {
 
 		const { username, password, first, last } = inputState
 
-		const res = await fetch('http://localhost:1000/auth/register', {
+		const res = await fetch('/auth/register', {
 			method: 'post',
 			headers: { 'content-type': 'application/json' },
 			body: JSON.stringify({ username, password, first, last }),

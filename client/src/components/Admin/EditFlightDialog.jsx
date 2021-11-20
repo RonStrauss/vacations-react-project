@@ -18,7 +18,6 @@ import { Close as CloseIcon } from '@mui/icons-material'
 import { DatePicker, LocalizationProvider } from '@mui/lab/'
 import DateAdapter from '@mui/lab/AdapterDateFns'
 import enLocale from 'date-fns/locale/en-GB'
-import { parseISO } from 'date-fns'
 
 export default function FormDialog({ currentlyEdittedFlight,setCurrentlyEdittedFlight, setFlightsArr, isEditDialogOpen, setIsEditDialogOpen }) {
 	const today = new Date()
@@ -44,7 +43,7 @@ export default function FormDialog({ currentlyEdittedFlight,setCurrentlyEdittedF
             setCollapseState({severity:'error', title:'Error...', body:'Your dates are invalid, please try re-selecting'})
         } else {
             const { destination, description, img, flight_starts, flight_ends, price, flightID } = currentlyEdittedFlight
-			const res = await fetch('http://localhost:1000/admin/'+flightID, {
+			const res = await fetch('/admin/'+flightID, {
                 method: 'put',
 				headers: { 'content-type': 'application/json' },
 				body: JSON.stringify({ destination, description, img, flight_starts, flight_ends, price }),

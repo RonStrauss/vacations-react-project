@@ -32,7 +32,7 @@ export default function TemporaryDrawer() {
 
 	const handleSearch = async e => {
 		e.preventDefault()
-		const res = await fetch('https://vacations-project-ron.herokuapp.com/flight/search', {
+		const res = await fetch('/flight/search', {
 			method: 'post',
 			headers: { 'content-type': 'application/json' },
 			body: JSON.stringify({ description: descriptionInput }),

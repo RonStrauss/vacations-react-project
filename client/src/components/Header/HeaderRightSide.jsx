@@ -6,7 +6,7 @@ export default function HeaderRightSide({ user, setUser }) {
 	const nav = useNavigate()
 
 	const handleLogout = async () => {
-		const res = await fetch('http://localhost:1000/auth/logout', { method: 'delete', credentials: 'include' })
+		const res = await fetch('/auth/logout', { method: 'delete', credentials: 'include' })
 		const data = await res.json()
 		if (!data.err) {
 			setUser(null)

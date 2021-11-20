@@ -5,7 +5,7 @@ import DialogTitle from "@mui/material/DialogTitle";
 
 export default function AlertDialog({ isDeleteDialogOpen, setIsDeleteDialogOpen, setFlightsArr,setUser }) {
 	const handleFlightDelete = async () => {
-		const res = await fetch("http://localhost:1000/admin/" + isDeleteDialogOpen.flightID, {
+		const res = await fetch("/admin/" + isDeleteDialogOpen.flightID, {
 			method: "delete",
 			credentials: "include"
 		});

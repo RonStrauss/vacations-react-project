@@ -44,7 +44,7 @@ const Login = ({ setUser, snackState, setSnackState, serverErrorMsg }) => {
 
 		const { username, password, remember } = inputState
 
-		const res = await fetch('http://localhost:1000/auth/login', {
+		const res = await fetch('/auth/login', {
 			method: 'post',
 			headers: { 'content-type': 'application/json' },
 			body: JSON.stringify({ username, password, remember }),
