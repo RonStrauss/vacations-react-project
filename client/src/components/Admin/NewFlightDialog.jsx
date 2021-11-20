@@ -134,7 +134,6 @@ export default function FormDialog({ isAddDiaglogOpen, setIsAddDiaglogOpen, setF
 							InputProps={{
 								startAdornment: <InputAdornment position='start'>$</InputAdornment>,
 							}}
-							onError={() => setIsInputValid({ ...isInputValid, price: false })}
 						/>
 						<Box sx={{ width: '100%' }}>
 							<Collapse in={isCollapseVisible}>
