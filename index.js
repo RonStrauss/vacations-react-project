@@ -1,18 +1,14 @@
 const express = require('express');
 const session = require('express-session');
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 1000;
 const path = require('path');
 
-require('dotenv').config()
+require('dotenv').config();
 
 const app = express();
 
 app.use(express.json());
-app.use(
-	session({
-		secret: 'GuItAr-CaT12347@@##',
-	})
-);
+app.use(session(process.env.local.session));
 
 app.use('/auth', require('./routes/auth'));
 app.use('/admin', require('./routes/admin'));
