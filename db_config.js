@@ -1,17 +1,19 @@
-const mysql = require("mysql");
+const mysql = require('mysql');
+require('dotenv').config();
 
-const con = mysql.createConnection({
-	host: "sql4.freemysqlhosting.net",
-	user: "sql4452254",
-	password: "4unDZ32w1w",
-	database: "sql4452254",
-	multipleStatements: true
-	
-});
+const con = mysql.createConnection(
+	process.env.local.dbConfig || {
+		host: 'localhost',
+		user: 'root',
+		password: '',
+		database: 'vacations',
+		multipleStatements: true,
+	}
+);
 
 con.connect(err => {
 	if (err) return console.log(err);
-	console.log("Connected Successfully 😁");
+	console.log('Connected Successfully 😁');
 });
 
 const promiseMeAQuery = q => {
